@@ -14,20 +14,8 @@
             <RowDefinition Height="*" />
 
         </Grid.RowDefinitions>
-        <Button Grid.Row="1" Name="DrawButton" BorderBrush="Transparent" TouchEnter="DrawButton_TouchEnter">
-            <Button.Background>
-                <ImageBrush ImageSource="Images/Toolbar/PenDraw.png"></ImageBrush>
-            </Button.Background>
-        </Button>
-        <Button Grid.Row="2" Name="DeleteButton" BorderBrush="Transparent" TouchEnter="DeleteButton_TouchEnter">
-            <Button.Background>
-                <ImageBrush ImageSource="Images/Toolbar/Junk.png"></ImageBrush>
-            </Button.Background>
-        </Button>
-        <Button Grid.Row="3" Name="PauseButton" BorderBrush="Transparent" TouchEnter="PauseButton_TouchEnter">
-            <Button.Background>
-                <ImageBrush ImageSource="Images/Toolbar/Pause.png"></ImageBrush>
-            </Button.Background>
-        </Button>
+        <Image Name="DrawImage" Grid.Row="1" Source="Images/Toolbar/PenDraw.png" TouchEnter="DrawButton_TouchEnter" />
+        <Image Name="DeleteImage" Grid.Row="2" Source="Images/Toolbar/Junk.png" TouchEnter="DeleteButton_TouchEnter"/>
+        <Image Name="PauseImage" Grid.Row="3" Source="Images/Toolbar/Pause.png" TouchEnter="PauseButton_TouchEnter"/>
     </Grid>
 </UserControl>

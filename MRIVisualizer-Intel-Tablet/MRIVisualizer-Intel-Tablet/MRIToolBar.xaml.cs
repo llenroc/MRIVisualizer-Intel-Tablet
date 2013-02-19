@@ -43,12 +43,12 @@ namespace MRIVisualizer_Intel_Tablet
             if (isDrawChecked)
             {
                 isDrawChecked = false;
-                DrawButton.Opacity = 1.0;
+                DrawImage.Opacity = 1.0;
             }
             else
             {
                 isDrawChecked = true;
-                DrawButton.Opacity = 0.6;
+                DrawImage.Opacity = 0.2;
             }
 
             Console.Out.WriteLine("Pause selected? " + isDrawChecked); 
@@ -61,17 +61,15 @@ namespace MRIVisualizer_Intel_Tablet
             if (isPauseChecked)
             {
                 isPauseChecked = false;
-                PauseButton.Opacity = 1.0;
+                PauseImage.Opacity = 1.0;
             }
-            else
+            else if (!isPauseChecked) 
             {
                 isPauseChecked = true;
-                PauseButton.Opacity = 0.6;
+                PauseImage.Opacity = 0.2;
             }
             OnPauseSelectionChanged(this, new ToolBarEventArgs(isPauseChecked));
-
             Console.Out.WriteLine("Pause selected? " + isPauseChecked); 
-
         }
     }
 
