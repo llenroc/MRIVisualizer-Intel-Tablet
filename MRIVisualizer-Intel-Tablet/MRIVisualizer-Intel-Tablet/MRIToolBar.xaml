@@ -1,0 +1,33 @@
+﻿<UserControl x:Class="MRIVisualizer_Intel_Tablet.MRIToolBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="800" d:DesignWidth="170">    
+    <Grid x:Name="PanelGrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="*" />
+
+        </Grid.RowDefinitions>
+        <ToggleButton Grid.Row="1" Name="DrawButton" BorderBrush="Transparent" Checked="DrawButton_Checked" Unchecked="DrawButton_Unchecked">
+            <ToggleButton.Background>
+                <ImageBrush ImageSource="Images/Toolbar/PenDraw.png"></ImageBrush>
+            </ToggleButton.Background>
+        </ToggleButton>
+        <Button Grid.Row="2" Name="DeleteButton" BorderBrush="Transparent" TouchEnter="DeleteButton_TouchEnter">
+            <Button.Background>
+                <ImageBrush ImageSource="Images/Toolbar/Junk.png"></ImageBrush>
+            </Button.Background>
+        </Button>
+        <ToggleButton Grid.Row="3" Name="PauseButton" BorderBrush="Transparent" Checked="PauseButton_Checked" Unchecked="PauseButton_Unchecked" >
+            <ToggleButton.Background>
+                <ImageBrush ImageSource="Images/Toolbar/Pause.png"></ImageBrush>
+            </ToggleButton.Background>
+        </ToggleButton>
+    </Grid>
+</UserControl>
