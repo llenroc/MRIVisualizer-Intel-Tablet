@@ -14,20 +14,20 @@
             <RowDefinition Height="*" />
 
         </Grid.RowDefinitions>
-        <ToggleButton Grid.Row="1" Name="DrawButton" BorderBrush="Transparent" Checked="DrawButton_Checked" Unchecked="DrawButton_Unchecked">
-            <ToggleButton.Background>
+        <Button Grid.Row="1" Name="DrawButton" BorderBrush="Transparent" TouchEnter="DrawButton_TouchEnter">
+            <Button.Background>
                 <ImageBrush ImageSource="Images/Toolbar/PenDraw.png"></ImageBrush>
-            </ToggleButton.Background>
-        </ToggleButton>
+            </Button.Background>
+        </Button>
         <Button Grid.Row="2" Name="DeleteButton" BorderBrush="Transparent" TouchEnter="DeleteButton_TouchEnter">
             <Button.Background>
                 <ImageBrush ImageSource="Images/Toolbar/Junk.png"></ImageBrush>
             </Button.Background>
         </Button>
-        <ToggleButton Grid.Row="3" Name="PauseButton" BorderBrush="Transparent" Checked="PauseButton_Checked" Unchecked="PauseButton_Unchecked" >
-            <ToggleButton.Background>
+        <Button Grid.Row="3" Name="PauseButton" BorderBrush="Transparent" TouchEnter="PauseButton_TouchEnter">
+            <Button.Background>
                 <ImageBrush ImageSource="Images/Toolbar/Pause.png"></ImageBrush>
-            </ToggleButton.Background>
-        </ToggleButton>
+            </Button.Background>
+        </Button>
     </Grid>
 </UserControl>

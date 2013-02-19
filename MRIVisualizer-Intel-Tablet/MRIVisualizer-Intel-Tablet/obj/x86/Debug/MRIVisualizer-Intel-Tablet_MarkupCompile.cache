@@ -4,16 +4,16 @@
 winexe
 C#
 .cs
-c:\users\ase\documents\visual studio 2010\Projects\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\obj\x86\Debug\
+C:\Users\Teddy\Documents\Visual Studio 2010\Projects\MRITablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\obj\x86\Debug\
 MRIVisualizer_Intel_Tablet
 none
 false
 DEBUG;TRACE
-c:\users\ase\documents\visual studio 2010\Projects\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\App.xaml
+C:\Users\Teddy\Documents\Visual Studio 2010\Projects\MRITablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\App.xaml
 21461584064
 100-656265453
 61981972274
-13-1570621370
+131775340858
 MainWindow.xaml;MRIToolBar.xaml;
 
 False

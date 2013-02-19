@@ -90,7 +90,7 @@ namespace MRIVisualizer_Intel_Tablet
         {
             MriImageCanvas.Height = this.ActualHeight;
             MriImageCanvas.Width = this.ActualWidth;
-            StartConnection();
+            //StartConnection();
             ToolBar.OnDrawSelectionChanged += ToolBar_OnDrawSelectionChanged;
             ToolBar.OnDeleteSelected += ToolBar_OnDeleteSelected;
             ToolBar.OnPauseSelectionChanged += ToolBar_OnPauseSelectionChanged;

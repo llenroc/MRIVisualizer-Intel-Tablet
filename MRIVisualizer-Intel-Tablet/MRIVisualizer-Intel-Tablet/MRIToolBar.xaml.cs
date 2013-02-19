@@ -22,6 +22,8 @@ namespace MRIVisualizer_Intel_Tablet
         public event EventHandler<ToolBarEventArgs> OnDrawSelectionChanged;
         public event EventHandler<EventArgs> OnDeleteSelected;
         public event EventHandler<ToolBarEventArgs> OnPauseSelectionChanged;
+        private bool isDrawChecked = false;
+        private bool isPauseChecked = false;
 
 
         public MRIToolBar()
@@ -36,24 +38,40 @@ namespace MRIVisualizer_Intel_Tablet
             OnDeleteSelected(this, new EventArgs());
         }
 
-        private void DrawButton_Checked(object sender, RoutedEventArgs e)
+        private void DrawButton_TouchEnter(object sender, TouchEventArgs e)
         {
-            OnDrawSelectionChanged(this, new ToolBarEventArgs((bool)DrawButton.IsChecked));
+            if (isDrawChecked)
+            {
+                isDrawChecked = false;
+                DrawButton.Opacity = 1.0;
+            }
+            else
+            {
+                isDrawChecked = true;
+                DrawButton.Opacity = 0.6;
+            }
+
+            Console.Out.WriteLine("Pause selected? " + isDrawChecked); 
+
+            OnDrawSelectionChanged(this, new ToolBarEventArgs(isDrawChecked));
         }
 
-        private void DrawButton_Unchecked(object sender, RoutedEventArgs e)
+        private void PauseButton_TouchEnter(object sender, TouchEventArgs e)
         {
-            OnDrawSelectionChanged(this, new ToolBarEventArgs((bool)DrawButton.IsChecked));
-        }
+            if (isPauseChecked)
+            {
+                isPauseChecked = false;
+                PauseButton.Opacity = 1.0;
+            }
+            else
+            {
+                isPauseChecked = true;
+                PauseButton.Opacity = 0.6;
+            }
+            OnPauseSelectionChanged(this, new ToolBarEventArgs(isPauseChecked));
 
-        private void PauseButton_Checked(object sender, RoutedEventArgs e)
-        {
-            OnPauseSelectionChanged(this, new ToolBarEventArgs((bool)PauseButton.IsChecked));
-        }
+            Console.Out.WriteLine("Pause selected? " + isPauseChecked); 
 
-        private void PauseButton_Unchecked(object sender, RoutedEventArgs e)
-        {
-            OnPauseSelectionChanged(this, new ToolBarEventArgs((bool)PauseButton.IsChecked));
         }
     }
 
