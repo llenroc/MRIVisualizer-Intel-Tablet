@@ -8,7 +8,7 @@
             <ColumnDefinition Width="3*" />
             <ColumnDefinition Width="Auto" />
         </Grid.ColumnDefinitions>
-        <Canvas Name="MriImageCanvas" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" />
+        <Canvas Name="MriImageCanvas" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="0" TouchDown="MriImageCanvas_TouchDown" TouchMove="MriImageCanvas_TouchMove" MouseDown="MriImageCanvas_MouseDown" MouseMove="MriImageCanvas_MouseMove" />
         <local:MRIToolBar x:Name="ToolBar" Grid.Column="1" Width="170"/>
     </Grid>
 </Window>

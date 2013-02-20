@@ -233,8 +233,6 @@ C:\Users\Teddy\Documents\Visual Studio 2010\Projects\MRITablet\MRIVisualizer-Int
 C:\Users\Teddy\Documents\Visual Studio 2010\Projects\MRITablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\obj\x86\Debug\MRIVisualizer-Intel-Tablet.g.resources
 C:\Users\Teddy\Documents\Visual Studio 2010\Projects\MRITablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\obj\x86\Debug\MRIVisualizer_Intel_Tablet.Properties.Resources.resources
 C:\Users\Teddy\Documents\Visual Studio 2010\Projects\MRITablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\obj\x86\Debug\MRIVisualizer-Intel-Tablet.csproj.GenerateResource.Cache
-C:\Users\ASE\Documents\MRITabletIntel\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\obj\x86\Debug\MRIVisualizer-Intel-Tablet.exe
-C:\Users\ASE\Documents\MRITabletIntel\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\obj\x86\Debug\MRIVisualizer-Intel-Tablet.pdb
 C:\Users\ASE\Documents\MRITabletIntel\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\bin\Debug\Images\MRI\0.jpg
 C:\Users\ASE\Documents\MRITabletIntel\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\bin\Debug\Images\MRI\1.jpg
 C:\Users\ASE\Documents\MRITabletIntel\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\bin\Debug\Images\MRI\10.jpg
@@ -351,3 +349,5 @@ C:\Users\ASE\Documents\MRITabletIntel\MRIVisualizer-Intel-Tablet\MRIVisualizer-I
 C:\Users\ASE\Documents\MRITabletIntel\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\obj\x86\Debug\MRIVisualizer-Intel-Tablet.g.resources
 C:\Users\ASE\Documents\MRITabletIntel\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\obj\x86\Debug\MRIVisualizer_Intel_Tablet.Properties.Resources.resources
 C:\Users\ASE\Documents\MRITabletIntel\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\obj\x86\Debug\MRIVisualizer-Intel-Tablet.csproj.GenerateResource.Cache
+C:\Users\ASE\Documents\MRITabletIntel\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\obj\x86\Debug\MRIVisualizer-Intel-Tablet.exe
+C:\Users\ASE\Documents\MRITabletIntel\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\MRIVisualizer-Intel-Tablet\obj\x86\Debug\MRIVisualizer-Intel-Tablet.pdb

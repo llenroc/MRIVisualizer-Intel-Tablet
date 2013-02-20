@@ -25,7 +25,6 @@ namespace MRIVisualizer_Intel_Tablet
         private bool isDrawChecked = false;
         private bool isPauseChecked = false;
 
-
         public MRIToolBar()
         {
             InitializeComponent();
@@ -58,17 +57,22 @@ namespace MRIVisualizer_Intel_Tablet
 
         private void PauseButton_TouchEnter(object sender, TouchEventArgs e)
         {
-            if (isPauseChecked)
-            {
-                isPauseChecked = false;
-                PauseImage.Opacity = 1.0;
-            }
-            else if (!isPauseChecked) 
+            OnPauseSelectionChanged(this, new ToolBarEventArgs(isPauseChecked));
+            Console.Out.WriteLine("Pause selected? " + isPauseChecked); 
+        }
+
+        public void SetPauseButtonState(bool isPaused)
+        {
+            if (isPaused)
             {
                 isPauseChecked = true;
                 PauseImage.Opacity = 0.2;
             }
-            OnPauseSelectionChanged(this, new ToolBarEventArgs(isPauseChecked));
+            else if (!isPaused)
+            {
+                isPauseChecked = false;
+                PauseImage.Opacity = 1.0;
+            }
             Console.Out.WriteLine("Pause selected? " + isPauseChecked); 
         }
     }
