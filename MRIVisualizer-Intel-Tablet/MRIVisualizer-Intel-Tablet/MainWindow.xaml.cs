@@ -72,13 +72,13 @@ namespace MRIVisualizer_Intel_Tablet
                         string startingClientID = msg.GetStringField("ClientID");
                         Color startingClientColor = (Color)ColorConverter.ConvertFromString(msg.GetStringField("ClientColor"));
                         Point startingPoint = new Point {X=msg.GetDoubleField("X"),Y=msg.GetDoubleField("Y")};
-                        NewDrawingPath(startingClientID, startingClientColor, startingPoint);
+                        NewDrawingPath(startingClientID, startingClientColor, startingPoint, msg.GetDoubleField("CanvasHeight"), msg.GetDoubleField("CanvasWidth"));
                         break;
                     case "ContinueDrawing":
                         string continuingClientID = msg.GetStringField("ClientID");
                         Color continuedClientColor = (Color)ColorConverter.ConvertFromString(msg.GetStringField("ClientColor"));
                         Point continuedPoint = new Point { X = msg.GetDoubleField("X"), Y = msg.GetDoubleField("Y") };
-                        ContinueDrawingPath(continuingClientID, continuedPoint);
+                        ContinueDrawingPath(continuingClientID, continuedPoint, msg.GetDoubleField("CanvasHeight"), msg.GetDoubleField("CanvasWidth"));
                         break;
 
                     case "ClearDrawing":
@@ -126,12 +126,14 @@ namespace MRIVisualizer_Intel_Tablet
             }
         }
 
-        private void ContinueDrawingPath(string continuingClientID, Point continuedPoint)
+        private void ContinueDrawingPath(string continuingClientID, Point continuedPoint, double canvasHeight, double canvasWidth)
         {
             this.Dispatcher.Invoke(
                 new Action(
                     delegate()
                     {
+                        Point translatedPoint = ConvertPoint(continuedPoint, canvasHeight, canvasWidth);
+
                         if (continuingClientID == null)
                             return;
                         PathGeometry pGeo = (PathGeometry)_drawingPaths[continuingClientID].Data;
@@ -141,13 +143,13 @@ namespace MRIVisualizer_Intel_Tablet
                             QuadraticBezierSegment previousLine = _clientPathPoints[_clientPathPoints.Count - 1] as QuadraticBezierSegment;
                             Point previousEndPoint = previousLine.Point2;
 
-                            QuadraticBezierSegment newSeg = new QuadraticBezierSegment(previousEndPoint, continuedPoint, true);
+                            QuadraticBezierSegment newSeg = new QuadraticBezierSegment(previousEndPoint, translatedPoint, true);
                             newSeg.IsSmoothJoin = true;
                             pGeo.Figures[0].Segments.Add(newSeg);
                         }
                         else
                         {
-                            QuadraticBezierSegment newSeg = new QuadraticBezierSegment(pGeo.Figures[0].StartPoint,continuedPoint,true);
+                            QuadraticBezierSegment newSeg = new QuadraticBezierSegment(pGeo.Figures[0].StartPoint, translatedPoint, true);
                             pGeo.Figures[0].Segments.Add(newSeg);
                         }
                     }
@@ -155,12 +157,14 @@ namespace MRIVisualizer_Intel_Tablet
             );
         }
 
-        private void NewDrawingPath(string startingClientID, Color startingClientColor, Point startingPoint)
+        private void NewDrawingPath(string startingClientID, Color startingClientColor, Point startingPoint, double canvasHeight, double canvasWidth)
         {
             this.Dispatcher.Invoke(
                 new Action(
                     delegate()
                     {
+                        Point translatedPoint = ConvertPoint(startingPoint, canvasHeight, canvasWidth);
+
                         Path drawingPath = new Path();
                         drawingPath.Stroke = new SolidColorBrush {Color = startingClientColor};
                         drawingPath.StrokeThickness = 5;
@@ -170,7 +174,7 @@ namespace MRIVisualizer_Intel_Tablet
                         PathGeometry geoPath = new PathGeometry();
                         geoPath.Figures = new PathFigureCollection();
 
-                        PathFigure pFigure = new PathFigure {StartPoint = startingPoint};
+                        PathFigure pFigure = new PathFigure { StartPoint = translatedPoint };
                         geoPath.Figures.Add(pFigure);
                         drawingPath.Data = geoPath;
 
@@ -268,6 +272,9 @@ namespace MRIVisualizer_Intel_Tablet
             msg.AddField("ClientColor", this._clientDrawingColor.ToString());
             msg.AddField("X",p.X);
             msg.AddField("Y",p.Y);
+            msg.AddField("CanvasHeight", MriImageCanvas.ActualHeight);
+            msg.AddField("CanvasWidth", MriImageCanvas.ActualWidth);
+            msg.AddField("Test", 12.2);
             this._connection.SendMessage(msg);
         }
 
@@ -316,5 +323,9 @@ namespace MRIVisualizer_Intel_Tablet
 
         #endregion ToolBar Functionality
 
+        private Point ConvertPoint(Point originPoint, double originHeight, double originWidth)
+        {
+            return new Point((originPoint.X * MriImageCanvas.ActualWidth / originWidth), (originPoint.Y * MriImageCanvas.ActualHeight / originHeight));
+        }
     }
 }
